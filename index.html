@@ -3,33 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title>Networklex Project</title>
     <style>
-        body { font-family: -apple-system, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #fff; }
-        .loader { text-align: center; color: #888; font-size: 14px; }
-        .spinner { border: 2px solid #f3f3f3; border-top: 2px solid #007AFF; border-radius: 50%; width: 20px; height: 20px; animation: spin 1s linear infinite; margin: 0 auto 10px; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        body { 
+            font-family: -apple-system, sans-serif; 
+            display: flex; justify-content: center; align-items: center; 
+            height: 100vh; margin: 0; background: #f5f5f7; color: #1d1d1f;
+        }
+        .card {
+            background: white; padding: 30px; border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center;
+            max-width: 320px; width: 90%;
+        }
+        .btn {
+            display: inline-block; background: #007AFF; color: white;
+            padding: 12px 24px; border-radius: 10px; text-decoration: none;
+            font-weight: 600; margin-top: 20px;
+        }
+        h1 { font-size: 22px; margin-bottom: 10px; }
+        p { font-size: 15px; opacity: 0.6; line-height: 1.4; }
     </style>
 </head>
 <body>
-    <div class="loader">
-        <div class="spinner"></div>
-        <p>Opening Networklex Case Study...</p>
+    <div class="card">
+        <h1>Networklex Case Study</h1>
+        <p>You are being redirected to the project on Donux. If it doesn't scroll automatically, please swipe down to <b>Legal Tech</b> section.</p>
+        <a href="https://donux.com/case-studies#:~:text=Legal%20Tech-,Networklex" class="btn">Open Project</a>
     </div>
 
     <script>
-        window.onload = function() {
-            const target = "https://donux.com/case-studies#:~:text=Legal%20Tech-,Networklex,-Building%20Networklex%20SRL%E2%80%99s";
-            
-            // Перший перехід
-            window.location.href = target;
-
-            // Спроба "дотиснути" скрол через 2 секунди після переходу
-            // (Працює, якщо вкладка залишається активною)
-            setTimeout(function() {
-                window.location.hash = ":~:text=Legal%20Tech-,Networklex,-Building%20Networklex%20SRL%E2%80%99s";
-            }, 2500);
-        };
+        // Ми все одно намагаємось перенаправити через 2 секунди
+        setTimeout(function() {
+            window.location.href = "https://donux.com/case-studies#:~:text=Legal%20Tech-,Networklex";
+        }, 2000);
     </script>
 </body>
 </html>
