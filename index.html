@@ -4,47 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
-    
-    <meta http-equiv="refresh" content="4;url=https://donux.com/case-studies#:~:text=Legal%20Tech-,Networklex,-Building%20Networklex%20SRL%E2%80%99s">
-    
     <style>
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            margin: 0; 
-            background-color: #ffffff; 
-            color: #1d1d1f; 
-        }
-        .loader { text-align: center; }
-        .spinner { 
-            border: 2px solid #f3f3f3; 
-            border-top: 2px solid #007AFF; 
-            border-radius: 50%; 
-            width: 24px; 
-            height: 24px; 
-            animation: spin 0.8s linear infinite; 
-            margin: 0 auto 16px; 
-        }
-        p { font-size: 15px; opacity: 0.7; }
+        body { font-family: -apple-system, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background: #fff; }
+        .loader { text-align: center; color: #888; font-size: 14px; }
+        .spinner { border: 2px solid #f3f3f3; border-top: 2px solid #007AFF; border-radius: 50%; width: 20px; height: 20px; animation: spin 1s linear infinite; margin: 0 auto 10px; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
     <div class="loader">
         <div class="spinner"></div>
-        <p>Loading Networklex case study...</p>
+        <p>Opening Networklex Case Study...</p>
     </div>
 
     <script>
         window.onload = function() {
-            // Збільшено затримку до 3 секунд (3000 мс)
+            const target = "https://donux.com/case-studies#:~:text=Legal%20Tech-,Networklex,-Building%20Networklex%20SRL%E2%80%99s";
+            
+            // Перший перехід
+            window.location.href = target;
+
+            // Спроба "дотиснути" скрол через 2 секунди після переходу
+            // (Працює, якщо вкладка залишається активною)
             setTimeout(function() {
-                const targetUrl = "https://donux.com/case-studies#:~:text=Legal%20Tech-,Networklex,-Building%20Networklex%20SRL%E2%80%99s";
-                window.location.replace(targetUrl);
-            }, 6000); 
+                window.location.hash = ":~:text=Legal%20Tech-,Networklex,-Building%20Networklex%20SRL%E2%80%99s";
+            }, 2500);
         };
     </script>
 </body>
